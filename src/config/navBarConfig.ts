@@ -113,7 +113,6 @@ export const navBarConfig: NavBarConfig = {
 		LinkPresets.Archive,
 		LinkPresets.Friends,
 		LinkPresets.Moments,
-		LinkPresets.Anime,
 		LinkPresets.Compass,
 		LinkPresets.Albums,
 		{
