@@ -232,6 +232,17 @@ export default defineConfig({
 	vite: {
 		resolve: {
 			alias: [
+				// Vite's dependency scanner may resolve without the `svelte` export
+				// condition. Map the offline component directly for scan/runtime parity.
+				{
+					find: /^@iconify\/svelte\/dist\/OfflineIcon\.svelte$/,
+					replacement: fileURLToPath(
+						new URL(
+							"./node_modules/@iconify/svelte/dist/OfflineIcon.svelte",
+							import.meta.url,
+						),
+					),
+				},
 				{
 					find: /^@iconify\/svelte$/,
 					replacement: fileURLToPath(
@@ -251,6 +262,12 @@ export default defineConfig({
 				"overlayscrollbars",
 				"@fancyapps/ui",
 			],
+		},
+		server: {
+			host: "0.0.0.0",
+			port: 4321,
+			strictPort: true,
+			allowedHosts: ["www.cry.homes", "cry.homes"],
 		},
 		build: {
 			minify: "esbuild",
