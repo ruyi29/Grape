@@ -7,7 +7,7 @@ import type { ProfileConfig } from "@/types/config";
 export const profileConfig: ProfileConfig = {
 	avatar: "assets/images/avatar.jpg", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
 	name: "Grape",
-	bio: "Somewhere, the light is still waiting for us.",
+	bio: "记录技术实践与学习所得。",
 	links: [
 		// {
 		// 	name: "Twitter",

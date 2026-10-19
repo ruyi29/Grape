@@ -12,7 +12,7 @@ export const siteConfig: SiteConfig = {
 	site: "http://cry.homes/",
 	base: "/",
 	title: "Grape's Blog",
-	subtitle: "A Material 3 anime blog",
+	subtitle: "技术文档与学习记录",
 	// 电脑端顶栏标题与导航内容区域："left" 左对齐，"center" 居中。
 	topAppBar: {
 		contentAlign: "center",
@@ -67,13 +67,11 @@ export const siteConfig: SiteConfig = {
 		homeText: {
 			// 仅在首页 Banner 中显示，标题与副标题会上下居中排列。
 			enable: true,
-			title: "Shirone",
+			title: "Grape's Blog",
 			subtitle: [
-				"特別なことはないけど、君がいると十分です",
-				"今でもあなたは私の光",
-				"君ってさ、知らないうちに私の毎日になってたよ",
-				"君と話すと、なんか毎日がちょっと楽しくなるんだ",
-				"今日はなんでもない日。でも、ちょっとだけいい日",
+				"记录技术实践，整理学习所得",
+				"把遇到的问题写下来，把解决方案留下来",
+				"持续学习，持续构建",
 			],
 			typewriter: {
 				// 副标题逐字显示；关闭后直接显示完整副标题。

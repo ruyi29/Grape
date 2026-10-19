@@ -1,26 +1,16 @@
-# About Shirone
+# 关于 Grape's Blog
 
-Welcome to the demo site of **Shirone** (白音) — an expressive, anime-inspired blog theme built on the **Material 3 Expressive (M3E)** design system.
+这里是 Grape 的技术博客，主要记录开发过程中的实践、问题排查、工具使用和学习笔记。
 
-::github{repo="LyraVoid/Shirone"}
+## 记录什么
 
-## ✦ Design & Philosophy
+- 前端与全栈开发中的实践经验
+- 环境配置、部署和故障排查过程
+- 对框架、工具和工程方法的学习整理
+- 值得以后再次查阅的解决方案
 
-Shirone aims to combine the warmth of expressive anime aesthetics with the rigor of modern web engineering:
+## 写作方式
 
-- **Dynamic Chromatic Spell**: Full dynamic HCT palette generation responding seamlessly to light/dark modes and user preferences with zero layout shifts.
-- **Seamless Shell Navigation**: Persistent application shell driven by Swup for continuous music playback, smooth page transitions, and preserved state.
-- **Rich Story Grimoire**: Markdown and MDX authoring with KaTeX math, Mermaid diagrams, interactive admonitions, expressive code blocks, and adaptive image galleries.
-- **Zero Extra Burden**: Optional integrations (comments, analytics, music widgets) load dynamically on demand — zero DOM footprint and zero bundle overhead when disabled.
+我会尽量记录完整的背景、尝试过的方案和最终结论，让每篇文章既能帮助自己复盘，也能为遇到类似问题的人提供参考。
 
-## ✦ Tech Stack
-
-- **Framework**: [Astro 7](https://astro.build/) & [Svelte 5](https://svelte.dev/) (Runes-driven islands)
-- **Styling**: [Tailwind CSS 4](https://tailwindcss.com/) & [Stylus](https://stylus-lang.com/)
-- **Design Standard**: [Material 3 Expressive](https://m3.material.io/)
-- **Typography**: Outfit & Yozai (悠哉圆体) with automated build-time subsetting
-- **Search Engine**: [Pagefind](https://pagefind.app/) offline full-text search
-
-## ✦ Credits
-
-- **Font**: [Yozai Font (悠哉字体)](https://github.com/lxgw/yozai-font) by [lxgw](https://github.com/lxgw)
+这个站点使用 Astro 构建，文章以 Markdown / MDX 编写，并支持代码高亮、数学公式、Mermaid 图表和全文搜索。
