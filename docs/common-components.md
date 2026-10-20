@@ -66,7 +66,7 @@
 
 | 组件 | 用途 |
 |---|---|
-| `ButtonLink` / `ButtonTag` | 链接/标签形态的按钮（atoms 组合） |
+| `ButtonLink` | 链接形态的按钮（atoms 组合） |
 | `PostMeta` | 文章元信息（日期/分类/标签） |
 | `FriendCard` | 友链卡片（头像 + 站名 + 描述 + 标签，整卡链接） |
 | `MomentCard` | 动态卡片（`<article>` 语义：头像/作者/时间/置顶/心情/正文/位置/标签） |

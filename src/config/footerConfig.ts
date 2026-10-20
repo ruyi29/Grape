@@ -6,6 +6,6 @@ import type { FooterConfig } from "@/types/footerConfig";
  * 关闭时（enable: false）零额外 DOM 占位、零文件读取开销。
  */
 export const footerConfig: FooterConfig = {
-	enable: false,
+	enable: true,
 };
   
