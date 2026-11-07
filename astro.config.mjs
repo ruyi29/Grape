@@ -256,6 +256,19 @@ export default defineConfig({
 		},
 		plugins: [optionalMusicSidebarPlugin, tailwindcss()],
 		optimizeDeps: {
+			// Rolldown scans virtual Svelte imports with its own resolver.
+			rolldownOptions: {
+				resolve: {
+					alias: {
+						"@iconify/svelte/dist/OfflineIcon.svelte": fileURLToPath(
+							new URL(
+								"./node_modules/@iconify/svelte/dist/OfflineIcon.svelte",
+								import.meta.url,
+							),
+						),
+					},
+				},
+			},
 			include: [
 				"mermaid",
 				"@panzoom/panzoom",

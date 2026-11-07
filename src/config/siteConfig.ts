@@ -28,7 +28,7 @@ export const siteConfig: SiteConfig = {
 	},
 	lang: "zh_CN", // Language code, e.g. 'en', 'zh_CN', 'ja', etc.
 	themeColor: {
-		hue: 300, // Default hue 0-360. 站点设计默认粉紫（偏二次元）；262 紫 / 345 粉 也可选
+		hue: 250, // Default hue 0-360. 站点设计默认粉紫（偏二次元）；262 紫 / 345 粉 也可选
 		fixed: false, // Hide the theme color picker for visitors
 		// Dynamic Material 3 palette style (TonalSpot/Vibrant/Content/Expressive/Rainbow/FruitSalad/Monochrome/Neutral/Fidelity)
 		style: "tonalSpot",
@@ -115,12 +115,11 @@ export const siteConfig: SiteConfig = {
 		style: "dual",
 	},
 	favicon: [
-		// Leave this array empty to use the default favicon
-		// {
-		//   src: '/favicon/icon.png',    // Path of the favicon, relative to the /public directory
-		//   theme: 'light',              // (Optional) Either 'light' or 'dark', set only if you have different favicons for light and dark mode
-		//   sizes: '32x32',              // (Optional) Only if you have favicons of different sizes
-		// }
+		// Omit theme to use the rabbit icon in both light and dark mode.
+		{ src: "/favicon/favicon-rabbit1-16.png", sizes: "16x16" },
+		{ src: "/favicon/favicon-rabbit1-32.png", sizes: "32x32" },
+		{ src: "/favicon/favicon-rabbit1-48.png", sizes: "48x48" },
+		{ src: "/favicon/favicon-rabbit1-192.png", sizes: "192x192" },
 	],
 };
 
