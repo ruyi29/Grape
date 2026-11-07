@@ -6,8 +6,6 @@ tags: [AI]
 category: 人工智能
 draft: false
 ---
-# AI 核心概念
-
 # LLM
 
 - 全称：Large Language Model（大模型）

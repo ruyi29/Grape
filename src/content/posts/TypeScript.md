@@ -7,26 +7,20 @@ category: 前端
 draft: false
 ---
 
-# TypeScript
-
-# 核心基础
+# TypeScript 核心基础
 
 ## 常用操作方式
 
 - 类型推断：TypeScript 会根据给变量存放的初始值类型推断，进行变量类型限定
 - 类型注解：书写的时候主动对类型进行注解
-
-  ```javascript
-  ```
-
+```javascript
 let str:string = 'abc'
-
 ```
 
 - 类型断言：人工干预断言值是某个类型
 	- 由于第二行可能没有值，不加 as number 会报错
 	- 如果确认里面必然有值大于2，加上as number 进行人工干预
-	```javascript
+```javascript
 let numArr = [1, 2, 3]
 const result = numArr.find(item => item > 2) as number
 result * 5

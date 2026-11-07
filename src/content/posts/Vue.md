@@ -7,9 +7,7 @@ category: 前端
 draft: false
 ---
 
-# Vue
-
-# 基本了解
+# Vue 基本了解
 
 - Vue 是渐进式 Javascript 框架
 - 作用：

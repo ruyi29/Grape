@@ -7,8 +7,6 @@ category: 前端
 draft: false
 ---
 
-# SCSS
-
 # SASS/SCSS 作用
 
 > Vite 项目安装 `sass`（注意：vite 里包名就叫 `sass`，不是 `node‑sass`）

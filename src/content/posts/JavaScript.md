@@ -7,9 +7,7 @@ category: 前端
 draft: false
 ---
 
-# JavaScript
-
-# 核心语法
+# JavaScript 核心语法
 
 - JS 用法，内链式和外链式
 
