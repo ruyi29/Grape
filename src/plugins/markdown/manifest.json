@@ -38,10 +38,7 @@
 				"modules": ["src/utils/abbreviations.ts"],
 				"network": []
 			},
-			"docs": [
-				"src/content/posts/markdown-abbreviations.md",
-				"docs/markdown-extensions.md"
-			],
+			"docs": ["docs/markdown-usage.md", "docs/markdown-extensions.md"],
 			"tests": [
 				"tests/plugins/markdown/inline/abbreviations.test.mjs",
 				"tests/site/abbreviations.spec.ts"
@@ -105,10 +102,7 @@
 				"modules": [],
 				"network": []
 			},
-			"docs": [
-				"src/content/posts/admonitions.md",
-				"docs/markdown-extensions.md"
-			],
+			"docs": ["docs/markdown-usage.md", "docs/markdown-extensions.md"],
 			"tests": [
 				"tests/plugins/markdown/containers/admonitions.test.mjs",
 				"tests/site/admonitions.spec.ts"
@@ -181,7 +175,7 @@
 				"modules": ["src/utils/code-tree.ts"],
 				"network": []
 			},
-			"docs": ["src/content/posts/markdown-enhancements.md"],
+			"docs": ["docs/markdown-usage.md"],
 			"tests": [
 				"tests/plugins/markdown/containers/code-tree.test.mjs",
 				"tests/site/code-tree.spec.ts"
@@ -244,10 +238,7 @@
 				"modules": [],
 				"network": []
 			},
-			"docs": [
-				"src/content/posts/collapse-panels.md",
-				"docs/markdown-extensions.md"
-			],
+			"docs": ["docs/markdown-usage.md", "docs/markdown-extensions.md"],
 			"tests": [
 				"tests/plugins/markdown/containers/collapse-panels.test.mjs",
 				"tests/plugins/markdown/core/disclosure.test.mjs",
@@ -294,7 +285,7 @@
 				"modules": [],
 				"network": []
 			},
-			"docs": ["src/content/posts/content-annotations.md"],
+			"docs": ["docs/markdown-usage.md"],
 			"tests": [
 				"tests/plugins/markdown/inline/content-annotations.test.mjs",
 				"tests/site/content-annotations.spec.ts"
@@ -386,7 +377,7 @@
 				"modules": ["src/utils/code-copy.ts", "src/utils/code-collapse.ts"],
 				"network": []
 			},
-			"docs": ["src/content/posts/expressive-code.md"],
+			"docs": ["docs/markdown-usage.md"],
 			"tests": ["tests/site/post-encryption.spec.ts"],
 			"notes": ["元数据具体解析规则由 Expressive Code 及已注册插件定义。"]
 		},
@@ -439,10 +430,7 @@
 				"modules": [],
 				"network": []
 			},
-			"docs": [
-				"src/content/posts/markdown-enhancements.md",
-				"docs/markdown-extensions.md"
-			],
+			"docs": ["docs/markdown-usage.md", "docs/markdown-extensions.md"],
 			"tests": [
 				"tests/plugins/markdown/containers/file-tree.test.mjs",
 				"tests/plugins/markdown/core/disclosure.test.mjs",
@@ -483,10 +471,7 @@
 				"modules": [],
 				"network": ["https://api.github.com/repos/{owner}/{repo}"]
 			},
-			"docs": [
-				"src/content/posts/markdown-extended.md",
-				"src/content/posts/guide/index.md"
-			],
+			"docs": ["docs/markdown-usage.md"],
 			"tests": [],
 			"notes": ["保留兼容，不作为新语法实现样板；重构前不得扩大使用面。"]
 		},
@@ -532,7 +517,7 @@
 				"modules": ["src/utils/fancybox-handler.ts"],
 				"network": ["author-declared image URLs only"]
 			},
-			"docs": ["src/content/posts/image-grid-demo/index.md"],
+			"docs": ["docs/markdown-usage.md"],
 			"tests": [
 				"tests/plugins/image-grid.test.mjs",
 				"tests/site/image-grid.spec.ts"
@@ -575,7 +560,7 @@
 				"modules": [],
 				"network": ["author-declared image URLs only"]
 			},
-			"docs": ["src/content/posts/markdown-extended.md"],
+			"docs": ["docs/markdown-usage.md"],
 			"tests": ["tests/plugins/rehype-markdown-images.test.mjs"],
 			"notes": ["非法或越界宽度令牌保留在 alt，不静默改写。"]
 		},
@@ -617,10 +602,7 @@
 				"modules": [],
 				"network": []
 			},
-			"docs": [
-				"src/content/posts/marker-highlights.md",
-				"docs/markdown-extensions.md"
-			],
+			"docs": ["docs/markdown-usage.md", "docs/markdown-extensions.md"],
 			"tests": [
 				"tests/plugins/markdown/inline/markers.test.mjs",
 				"tests/site/markers.spec.ts"
@@ -658,10 +640,7 @@
 				"modules": [],
 				"network": []
 			},
-			"docs": [
-				"src/content/posts/guide/index.md",
-				"src/content/posts/markdown.md"
-			],
+			"docs": ["docs/markdown-usage.md"],
 			"tests": ["tests/site/post-encryption.spec.ts"],
 			"notes": ["解析由 remark-math 与 rehype-katex 提供。"]
 		},
@@ -688,10 +667,7 @@
 				"modules": ["src/utils/mermaid.ts", "src/utils/mermaid-interaction.ts"],
 				"network": []
 			},
-			"docs": [
-				"src/content/posts/markdown-mermaid.md",
-				"src/content/posts/guide/index.md"
-			],
+			"docs": ["docs/markdown-usage.md"],
 			"tests": ["tests/site/mermaid.spec.ts"],
 			"notes": [
 				"客户端脚本与样式仅在页面含 Mermaid 语法时按需加载；初始化必须覆盖直接加载、Swup、主题变化和文章解密。"
@@ -742,10 +718,7 @@
 				"modules": ["src/utils/option-groups.ts"],
 				"network": []
 			},
-			"docs": [
-				"src/content/posts/option-groups.md",
-				"docs/markdown-extensions.md"
-			],
+			"docs": ["docs/markdown-usage.md", "docs/markdown-extensions.md"],
 			"tests": [
 				"tests/plugins/markdown/containers/option-groups.test.mjs",
 				"tests/site/option-groups.spec.ts"
@@ -779,7 +752,7 @@
 				"modules": [],
 				"network": []
 			},
-			"docs": ["src/content/posts/markdown-extended.md"],
+			"docs": ["docs/markdown-usage.md"],
 			"tests": [],
 			"notes": ["保留兼容；缺少触屏与键盘契约，不作为新行内语法样板。"]
 		},
@@ -824,7 +797,7 @@
 				"modules": [],
 				"network": []
 			},
-			"docs": ["src/content/posts/steps.md"],
+			"docs": ["docs/markdown-usage.md"],
 			"tests": [
 				"tests/plugins/markdown/containers/steps.test.mjs",
 				"tests/site/steps.spec.ts"
