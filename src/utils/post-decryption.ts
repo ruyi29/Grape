@@ -65,6 +65,7 @@ function syncTableOfContents(container: HTMLElement): void {
 		anchor.className = `m3-blog-toc__item${topLevel ? "" : " m3-blog-toc__item--sub"}`;
 		anchor.href = `#${encodeURIComponent(heading.slug)}`;
 		anchor.dataset.tocDepth = String(heading.depth);
+		anchor.style.setProperty("--toc-level", String(relativeDepth));
 
 		const mark = document.createElement("span");
 		mark.className = "m3-blog-toc__mark";

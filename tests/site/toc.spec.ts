@@ -11,6 +11,42 @@ import { expect, test } from "@playwright/test";
 test.describe("Site TOC", () => {
 	test.use({ viewport: { width: 1600, height: 900 } });
 
+	test("indents each heading level on direct load and client navigation", async ({
+		page,
+	}) => {
+		for (const clientNavigation of [false, true]) {
+			if (clientNavigation) {
+				await page.goto("/");
+				await page.locator('a[href="/posts/scss/"]').first().click();
+			} else {
+				await page.goto("/posts/scss/");
+			}
+			await page.waitForFunction(() =>
+				getComputedStyle(document.documentElement)
+					.getPropertyValue("--mc-primary")
+					.trim(),
+			);
+			await expect(
+				page.locator('#toc [data-toc-depth="3"]').first(),
+			).toBeAttached();
+			const paddings = await page
+				.locator("#toc .m3-blog-toc__item")
+				.evaluateAll((items) =>
+					[1, 2, 3].map((depth) => {
+						const item = items.find(
+							(item) => item.getAttribute("data-toc-depth") === String(depth),
+						);
+						return item
+							? Number.parseFloat(getComputedStyle(item).paddingInlineStart)
+							: -1;
+					}),
+				);
+			expect(paddings[0]).toBeGreaterThanOrEqual(0);
+			expect(paddings[1]).toBeGreaterThan(paddings[0]);
+			expect(paddings[2]).toBeGreaterThan(paddings[1]);
+		}
+	});
+
 	test("scroll highlight and anchor navigation", async ({ page }) => {
 		await page.goto("/posts/guide/", { waitUntil: "networkidle" });
 
