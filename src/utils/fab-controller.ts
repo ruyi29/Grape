@@ -387,25 +387,34 @@ class FabController {
 		entries.forEach((entry) => {
 			const depth = Number.parseInt(entry.dataset.tocDepth ?? "", 10);
 			if (Number.isFinite(depth) && depth >= baseDepth + maxDepth) {
-				entry.remove();
+				(entry.closest(".m3-blog-toc__branch") ?? entry).remove();
 			}
 		});
+		for (const branch of clone.querySelectorAll("details")) {
+			if (!branch.querySelector(":scope > .m3-blog-toc .m3-blog-toc__item")) {
+				const link = branch.querySelector(":scope > summary > a");
+				if (link) branch.replaceWith(link);
+			}
+		}
 		tree.replaceChildren(clone);
 	}
 
 	private trapFocus(event: KeyboardEvent, panel: HTMLElement): void {
 		const focusable = [
 			...panel.querySelectorAll<HTMLElement>(
-				"button:not([disabled]), a[href], [tabindex]:not([tabindex='-1'])",
+				"button:not([disabled]), summary, a[href], [tabindex]:not([tabindex='-1'])",
 			),
 		];
-		if (!focusable.length) {
+		const visibleFocusable = focusable.filter((element) =>
+			element.checkVisibility(),
+		);
+		if (!visibleFocusable.length) {
 			event.preventDefault();
 			panel.focus();
 			return;
 		}
-		const first = focusable[0];
-		const last = focusable[focusable.length - 1];
+		const first = visibleFocusable[0];
+		const last = visibleFocusable[visibleFocusable.length - 1];
 		if (event.shiftKey && document.activeElement === first) {
 			event.preventDefault();
 			last.focus();

@@ -47,6 +47,49 @@ test.describe("Site TOC", () => {
 		}
 	});
 
+	test("collapses nested branches on direct load and client navigation", async ({
+		page,
+	}) => {
+		for (const clientNavigation of [false, true]) {
+			if (clientNavigation) {
+				await page.goto("/");
+				await page.locator('a[href="/posts/scss/"]').first().click();
+			} else {
+				await page.goto("/posts/scss/");
+			}
+			for (const depth of [1, 2]) {
+				const branch = page
+					.locator("#toc details")
+					.filter({
+						has: page.locator(
+							`:scope > summary > a[data-toc-depth="${depth}"]`,
+						),
+					})
+					.first();
+				const summary = branch.locator(":scope > summary");
+				const children = branch.locator(":scope > .m3-blog-toc a");
+				await expect(children.first()).toBeVisible();
+				const box = await summary.boundingBox();
+				if (!box) throw new Error("Missing TOC summary bounds");
+				await summary.click({ position: { x: box.width - 12, y: 12 } });
+				await expect(branch).not.toHaveAttribute("open");
+				for (const child of await children.all())
+					await expect(child).toBeHidden();
+				await summary.focus();
+				await page.keyboard.press("Enter");
+				await expect(children.first()).toBeVisible();
+			}
+			await page.setViewportSize({ width: 1000, height: 900 });
+			await page.locator("#fab-toc-btn").click();
+			const floatingBranch = page.locator("#floating-toc-tree details").first();
+			await floatingBranch.locator(":scope > summary").focus();
+			await page.keyboard.press("Enter");
+			await expect(floatingBranch).not.toHaveAttribute("open");
+			await page.locator("#floating-toc-close-btn").click();
+			await page.setViewportSize({ width: 1600, height: 900 });
+		}
+	});
+
 	test("scroll highlight and anchor navigation", async ({ page }) => {
 		await page.goto("/posts/guide/", { waitUntil: "networkidle" });
 

@@ -18,24 +18,35 @@ interface Props {
 	/** 显示的最大层级数（相对最小 depth 计算） */
 	maxDepth?: number;
 	class?: string;
+	baseDepth?: number;
 }
 
-const { headings = [], maxDepth = 3, class: className } = Astro.props;
+const { headings = [], maxDepth = 3, class: className, baseDepth } = Astro.props;
 
 const minDepth = headings.reduce(
 	(min, h) => Math.min(min, h.depth),
 	Number.POSITIVE_INFINITY,
 );
-const base = Number.isFinite(minDepth) ? minDepth : 1;
+const base = baseDepth ?? (Number.isFinite(minDepth) ? minDepth : 1);
 const visible = headings.filter((h) => h.depth < base + maxDepth);
+const branches: { heading: TocHeading; children: TocHeading[] }[] = [];
+for (const heading of visible) {
+	const parent = branches.at(-1);
+	if (parent && heading.depth > parent.heading.depth) {
+		parent.children.push(heading);
+	} else {
+		branches.push({ heading, children: [] });
+	}
+}
+const Container = baseDepth === undefined ? "nav" : "div";
 let counter = 0;
 ---
 
-<nav class:list={["m3-blog-toc", className]} aria-label={i18n(I18nKey.tableOfContents)}>
-	{visible.map((h) => {
+<Container class:list={["m3-blog-toc", className]} aria-label={baseDepth === undefined ? i18n(I18nKey.tableOfContents) : undefined}>
+	{branches.map(({ heading: h, children }) => {
 		const rel = h.depth - base;
 		const top = rel === 0;
-		return (
+		const link = (
 			<a
 				class:list={["m3-blog-toc__item", { "m3-blog-toc__item--sub": !top }]}
 				href={`#${h.slug}`}
@@ -53,7 +64,16 @@ let counter = 0;
 				<span class="m3-blog-toc__text">{h.text}</span>
 			</a>
 		);
+		const subtree = children.length > 0 && (
+			<Astro.self headings={children} maxDepth={maxDepth} baseDepth={base} />
+		);
+		return children.length > 0 ? (
+			<details class="m3-blog-toc__branch" open>
+				<summary class="m3-blog-toc__summary m3-state-layer">{link}</summary>
+				{subtree}
+			</details>
+		) : <div class="m3-blog-toc__branch">{link}{subtree}</div>;
 	})}
-</nav>
+</Container>
 
 <!-- 样式统一维护于 src/styles/toc.css（经 main.css 全局导入），激活态由调用方叠加类 -->
