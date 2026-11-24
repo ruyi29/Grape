@@ -1,6 +1,6 @@
 ---
 title: TypeScript 学习笔记
-published: 2026-07-25
+published: 2026-07-26
 description: TypeScript 类型系统和开发实践整理。
 tags: [TypeScript]
 category: 前端
