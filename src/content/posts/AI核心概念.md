@@ -3,7 +3,7 @@ title: AI 核心概念
 published: 2026-10-20
 description: 整理大语言模型、Token、上下文、RAG、提示词、工具调用、MCP 与 Agent 等 AI 基础概念。
 tags: [AI]
-category: 人工智能
+category: AI
 draft: false
 ---
 # LLM

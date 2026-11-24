@@ -1,8 +1,8 @@
 ---
 title: HTML5 与 CSS 学习笔记
-published: 2026-10-19
+published: 2026-7-16
 description: HTML5 文档结构、常用标签和 CSS 基础知识整理。
-tags: [HTML5, CSS, 前端]
+tags: [HTML, CSS]
 category: 前端
 draft: false
 ---

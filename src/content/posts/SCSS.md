@@ -1,8 +1,8 @@
 ---
 title: SCSS 学习笔记
-published: 2026-10-19
+published: 2026-8-26
 description: SCSS 语法和样式组织方式整理。
-tags: [SCSS, CSS, 前端]
+tags: [SCSS]
 category: 前端
 draft: false
 ---

@@ -1,8 +1,8 @@
 ---
 title: Vue 学习笔记
-published: 2026-10-19
+published: 2026-8-20
 description: Vue 组件、响应式数据和常用特性的学习整理。
-tags: [Vue, JavaScript, 前端]
+tags: [Vue]
 category: 前端
 draft: false
 ---
