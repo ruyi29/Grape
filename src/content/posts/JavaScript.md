@@ -1,6 +1,6 @@
 ---
 title: JavaScript 学习笔记
-published: 2026-7-25
+published: 2026-07-25
 description: JavaScript 基础语法、数据类型、函数和常用概念整理。
 tags: [JavaScript]
 category: 前端
